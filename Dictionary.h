@@ -11,7 +11,10 @@ class SetString : public QSet<QString>
   SetString( QSet<QString>& S ) : QSet<QString>( S ) {};
   };
 
-class Dictionary : public QMap<QString, int> //1
+class Dictionary : public QMap<QString, int> /*1  каждая переменная объекта QMap состоит из двух частей: первая
+                                 часть - ключ, с помощью которого можно найти вторую часть. В данном случае ключ - это перенная
+                                 типа QString, с помощью которой можно найти значение второй переменной типа int
+                                              */
   {
   public:
     QString m_FileName;

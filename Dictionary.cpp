@@ -1,4 +1,4 @@
-#include <qtextstream.h>
+Ôªø#include <qtextstream.h>
 #include <qfile.h>
 #include <QFileDialog>
 #include "Dictionary.h"
@@ -19,7 +19,7 @@ Dictionary::Dictionary( char *Message )
     for( int iChar = 0; iChar < WordIn.size(); iChar++ )
       {
       QChar Char = WordIn[iChar];
-     if( Char < "¿" || Char > "ˇ" ) break;
+     if( (Char < "–ê" || Char > "—è") && (Char < "A" || Char > "z")) break;
         Word += Char.toLower();
       }
     if( Word.isEmpty() ) continue;
