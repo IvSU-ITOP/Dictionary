@@ -5,7 +5,7 @@
 
 Dictionary::Dictionary( char *Message )
   {
-  //if( Message == NULL ) return;
+  if( Message == NULL ) return;
   QString FileName = QFileDialog::getOpenFileName( NULL, Message, "", "Text files (*.txt)");
   if( FileName.isEmpty() ) throw QByteArray( "Have changed your mind to work" );
   m_FileName = FileName.right( FileName.length() - FileName.lastIndexOf( '/' ) - 1 );
