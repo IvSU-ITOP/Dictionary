@@ -1,11 +1,11 @@
-#include <qtextstream.h>
+Ôªø#include <qtextstream.h>
 #include <qfile.h>
 #include <QFileDialog>
 #include "Dictionary.h"
 
 Dictionary::Dictionary( char *Message )
   {
-  //if( Message == NULL ) return;
+  if( Message == NULL ) return;
   QString FileName = QFileDialog::getOpenFileName( NULL, Message, "", "Text files (*.txt)");
   if( FileName.isEmpty() ) throw QByteArray( "Have changed your mind to work" );
   m_FileName = FileName.right( FileName.length() - FileName.lastIndexOf( '/' ) - 1 );
@@ -19,7 +19,7 @@ Dictionary::Dictionary( char *Message )
     for( int iChar = 0; iChar < WordIn.size(); iChar++ )
       {
       QChar Char = WordIn[iChar];
-     if( Char < "¿" || Char > "ˇ" ) break;
+     if( (Char < "–ê" || Char > "—è") && (Char < "A" || Char > "z")) break;
         Word += Char.toLower();
       }
     if( Word.isEmpty() ) continue;
